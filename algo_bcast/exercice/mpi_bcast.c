@@ -8,6 +8,22 @@ void mpi_bcast(char *buf, int n)
     MPI_Bcast(buf, n, MPI_BYTE, 0, MPI_COMM_WORLD);
 }
 
+void fill_buf(char *buf, int n)
+{
+  for(int i = 0 ; i < n ; i++) {
+    buf[i] = (char)i;
+  }
+}
+
+int check_buf(char *buf, int n)
+{
+  for(int i = 0 ; i < n ; i++) {
+    if (buf[i] != (char)i)
+      return 0;
+  }
+  return 1;
+}
+
 #define NITER 100
 
 int main(int argc, char **argv)
@@ -27,7 +43,7 @@ int main(int argc, char **argv)
     {
         printf("%d bytes\n", n);
         fflush(stdout);
-        memset(buf, 0, n);
+        fill_buf(buf, n);
     }
 
     tbeg = MPI_Wtime();
@@ -42,6 +58,9 @@ int main(int argc, char **argv)
     if (rank == 0)
     {
         printf("Telaps for %d bcast = %.3e s\n", NITER, tend - tbeg);
+    }
+    if (!check_buf(buf, n)) {
+        printf("Erreur contenu buffer pour processus %d\n", rank);
     }
 
     free(buf);
