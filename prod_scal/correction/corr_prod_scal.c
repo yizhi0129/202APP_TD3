@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <mpi.h>
+#include </usr/local/mpich-3.4.1/include/mpi.h>
 
 struct info_t {
     int nproc;

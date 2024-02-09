@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <mpi.h>
+#include </usr/local/mpich-3.4.1/include/mpi.h>
 
 struct hierarch_info_s
 {
@@ -20,10 +20,10 @@ struct bcast_info_s
 };
 typedef struct bcast_info_s bcast_info_t;
 
-/* Calcul de la plus petite puissance de 2 supérieure ou egale a number */
+/* Calcul de la plus petite puissance de 2 supï¿½rieure ou egale a number */
 int calc_puiss2(int number)
 {
-    /* Calcul de la plus petite puissance de 2 supérieure ou egale a number */
+    /* Calcul de la plus petite puissance de 2 supï¿½rieure ou egale a number */
     int tmp = number >> 1;
     int p2 = 0;
     while(tmp > 0)

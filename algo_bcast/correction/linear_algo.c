@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <mpi.h>
+#include </usr/local/mpich-3.4.1/include/mpi.h>
 
 void linear_bcast(char *buf, int n, int nproc, int rank)
 {
