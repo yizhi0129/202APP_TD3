@@ -1,0 +1,2 @@
+1000 bytes
+Telaps for 100 bcast = 7.592e-03 s

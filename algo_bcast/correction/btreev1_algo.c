@@ -16,7 +16,7 @@ void init_bcast_info(int nproc, int rank, bcast_info_t *binfo)
     binfo->nproc = nproc;
     binfo->rank  = rank;
 
-    /* Calcul de la plus petite puissance de 2 sup�rieure ou egale a nproc */
+    /* Calcul de la plus petite puissance de 2 supérieure ou égale a nproc */
     int tmp = nproc >> 1;
     int p2 = 0;
     while(tmp > 0)
@@ -45,7 +45,7 @@ void btreev1_bcast(char *buf, int n, bcast_info_t *binfo)
         rrcv_min = rsnd_min + two_p2;
         rrcv_sup = rsnd_sup + two_p2;
 
-        /* Correction eventuelle pour la derniere etape */
+        /* Correction éventuelle pour la dernière étape */
         if (rrcv_sup > binfo->nproc)
         {
             /* Arrivera quand nproc n'est pas une puissance de 2 */
@@ -61,7 +61,6 @@ void btreev1_bcast(char *buf, int n, bcast_info_t *binfo)
         {
             MPI_Recv(buf, n, MPI_BYTE, binfo->rank-two_p2, tag+i, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         }
-
     }
 }
 
