@@ -1,0 +1,7 @@
+P0, val_to_recv = 0
+P4, val_to_recv = 4
+P6, val_to_recv = 6
+P1, val_to_recv = 1
+P2, val_to_recv = 2
+P5, val_to_recv = 5
+P3, val_to_recv = 3

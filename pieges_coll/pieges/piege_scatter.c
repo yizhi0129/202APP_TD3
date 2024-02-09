@@ -27,7 +27,7 @@ int main(int argc, char **argv)
         }
 
         MPI_Scatter(
-                vals_to_distrib, P, MPI_INT,
+                vals_to_distrib, P, MPI_INT, // remplacer P par 1 : i élément par processus
                 &val_to_recv, 1, MPI_INT,
                 root, MPI_COMM_WORLD);
     }

@@ -15,7 +15,7 @@ int main(int argc, char **argv)
      */
     int all_vals[P];
 
-    val_to_send = rank;
+    val_to_send = rank; 
 
     for(i = 0 ; i < P ; i++)
     {
@@ -29,6 +29,8 @@ int main(int argc, char **argv)
             MPI_Bcast(all_vals+i, 1, MPI_INT, rank, MPI_COMM_WORLD);
         }
     }
+    // Chaque processus a une valeur propre : 
+    // dans la communication cillective, il faut envoyer la même racine à tous les autres processus
 
     printf("P%02d = ", rank);
     for(i = 0 ; i < P ; i++)

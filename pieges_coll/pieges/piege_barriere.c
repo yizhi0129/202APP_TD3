@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     }
     else
     {
-        MPI_Barrier(MPI_COMM_WORLD);
+        MPI_Barrier(MPI_COMM_WORLD); // proc 0 pas dans le barrière
     }
 
     sprintf(file_name, "REP_COMMUN/trace.P%d", rank);
