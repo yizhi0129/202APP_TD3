@@ -6,7 +6,12 @@
 double reduction_somme(double in)
 {
     /* A COMPLETER */
-}
+    int rang, P, root;
+    double *all_in;
+    MPI_Gather(&in, 1, MPI_DOUBLE, all_in, 1, MPI_DOUBLE, root, MPI_COMM_WORLD);
+
+    return *all_in;
+} // segfault !!
 
 struct info_t {
     int nproc;

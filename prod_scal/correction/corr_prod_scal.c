@@ -70,7 +70,7 @@ double produit_scalaire(int N, double *a, double *b) {
     for( i = 0 ; i < N ; i++ )
 	res_loc += a[i]*b[i];
 
-    MPI_Allreduce(&res_loc, &res_glob, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+    MPI_Allreduce(&res_loc, &res_glob, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD); // reduce computation of local results to global result
 
     return res_glob;
 }

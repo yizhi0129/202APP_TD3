@@ -21,7 +21,7 @@ double reduction_somme(double in)
     }
 
     MPI_Gather(
-            &in, 1, MPI_DOUBLE,
+            &in, 1, MPI_DOUBLE, // 1 : nb d'elements recus par proc
             all_in, 1, MPI_DOUBLE,
             root, MPI_COMM_WORLD);
 
